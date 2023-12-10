@@ -55,5 +55,47 @@ Using the Calendar function a new table was created with a continuous list of da
 
 THe Schema was created to connect each data table with their unique keys. Product Codes, Store Codes, User IDs, Order Date/Shipping Dates
 
+![Schema](Schema.png)
+
+Within this step another table was added to contain all measures that will be created in the following step.
+
+#### Creating Key Measures
+
+A few key measures, that will come in use for the report. The below Key Measures have been added
+
+Total Orders
+
+    Total Orders = COUNT(Orders[Order Date])
+
+Total Revenue
+
+    Total Revenue = SUMX(Orders, Orders[Product Quantity] * RELATED(Products[Sale Price]))
+
+Total Profit
+
+    Total Profit = SUMX(Orders, Orders[Product Quantity] * (RELATED(Products[Sale Price]) - RELATED(Products[Cost Price])))
+
+Total Customers
+
+    Total Customers = COUNTROWS(DISTINCT(Orders[User ID]))
+
+Total Quantity
+
+    Total Quantity = SUM(Orders[Product Quantity])
+
+Profit YTD
+
+    Profit YTD = TOTALYTD([Total Profit], 'Date Table'[Start of Year])
+
+Revenue YTD
+
+    Revenue YTD = TOTALYTD([Total Revenue], 'Date Table'[Start of Year])
+    
+#### Creating Date and Geography Hierarchies
+
+Creating Hieratchies will allow us to drill down on our report and perform greater analysis.
+
+The date one, using the date table was:
+
 
 
