@@ -103,6 +103,52 @@ Creating Hieratchies will allow us to drill down on our report and perform great
 
 The next step is to begin the reports, the first report we will do is a page focusing on customer-level analysis
 
-![Customer Detail Page](Customer Detail.png)
+![Customer Detail Page](CustomerDetail.png)
+
+#### Headline Card Visuals
+
+The two rectangles are the headlines, which show how many customers and the revenue per customer.
+
+Unique customers uses the measure Total Customers, whereas the Revenue per customer is a new measure of
+
+        Revenue per Customer = [Total Revenue] / [Total Customers]
+
+#### Summary Charts
+
+The Donut chart is created by filtering the Customer Country column against the total customers column
+
+The column chart is created by filtering the Product Category column against the total customers column
+
+Clicking any seciton within this chart will cross filter across the rest of the report
+
+#### Line Chart
+
+The line chart is created with the total customers on the y axis and the date heirarchy on the x axis.
+
+This chart can be drilled up and down from year, quarter and month to show different trends. It will also predict the 10 periods.
+
+#### Top 20 Customer Table
+
+The table shows the top 20 customers with their total revenue and orders placed, which can be filtered over country, category and time period
+
+#### Top Customer Cards
+
+The cards in the bottom right show details on the top customer over the filtered time period, using 3 new measures
+
+Top Customer
+
+        Top Customer = MAXX(TOPN(1, Customers, [Total Revenue], DESC), Customers[Full Name])
+
+Revenue 
+
+        Top Customer Revenue = MAXX(Customers, [Total Revenue])
+
+Orders
+
+WIP
+
+#### Date Slicer
+
+The line in the bottom right allows the user to filter between years
 
 
