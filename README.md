@@ -99,4 +99,10 @@ Creating Hieratchies will allow us to drill down on our report and perform great
 
 ![Geography Hierarchy](GeographyHierarchy.png)
 
+### Build Customer Detail Page
+
+The next step is to begin the reports, the first report we will do is a page focusing on customer-level analysis
+
+![Customer Detail Page](Customer Detail.png)
+
 
