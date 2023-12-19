@@ -1,0 +1,5 @@
+"column_name","data_type"
+"total_sales","double precision"
+"percentage_of_total_sales","double precision"
+"order_count","bigint"
+"store_type","text"
