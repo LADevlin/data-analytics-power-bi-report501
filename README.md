@@ -55,7 +55,7 @@ Using the Calendar function a new table was created with a continuous list of da
 
 THe Schema was created to connect each data table with their unique keys. Product Codes, Store Codes, User IDs, Order Date/Shipping Dates
 
-![Schema](Schema.png)
+![Schema](img/Schema.png)
 
 Within this step another table was added to contain all measures that will be created in the following step.
 
@@ -95,21 +95,21 @@ Revenue YTD
 
 Creating Hieratchies will allow us to drill down on our report and perform greater analysis. Below show the 2 hierarchies created
 
-![Date Hierarchy](DateHierarchy.png)
+![Date Hierarchy](img/DateHierarchy.png)
 
-![Geography Hierarchy](GeographyHierarchy.png)
+![Geography Hierarchy](img/GeographyHierarchy.png)
 
 ### Build Customer Detail Page
 
 The next step is to begin the reports, the first report we will do is a page focusing on customer-level analysis
 
-![Customer Detail Page](CustomerDetail.png)
+![Customer Detail Page](img/CustomerDetail.png)
 
 #### Headline Card Visuals
 
 The two rectangles are the headlines, which show how many customers and the revenue per customer.
 
-Unique customers uses the measure Total Customers, whereas the Revenue per customer is a new measure of
+Unique customers use the measure Total Customers, whereas the Revenue per customer is a new measure of
 
         Revenue per Customer = [Total Revenue] / [Total Customers]
 
@@ -119,7 +119,7 @@ The Donut chart is created by filtering the Customer Country column against the 
 
 The column chart is created by filtering the Product Category column against the total customers column
 
-Clicking any seciton within this chart will cross filter across the rest of the report
+Clicking any section within this chart will cross filter across the rest of the report
 
 #### Line Chart
 
