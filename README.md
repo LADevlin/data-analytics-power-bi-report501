@@ -210,7 +210,7 @@ The final part is the top products table which will be looked at later, however 
 
 This page provides a detailed look at which products are performing well with filtering across product and region
 
-# INSERT PRODUCT PAGE IMAGE
+![Product Detail Page](img/ProductDetail.png)
 
 #### Gauge Visuals
 
@@ -252,7 +252,7 @@ Profit per Item was calculated via
 
 On this page, it is useful to provide a slicer toolbar for clarity and not cluttering the page.
 
-# INSERT SLICER TOOLBAR
+![Slicer Toolbar](img/SlicerToolbar.png)
 
 Using a button that links to a bookmark, a menu is opened that allows slicing on the page for product category and country, this menu can be closed again with the back button linking to a bookmark of the original page, whilst also keeping the changes of data.
 
@@ -260,7 +260,7 @@ Using a button that links to a bookmark, a menu is opened that allows slicing on
 
 This page provides a map of all stores whilst providing a quick performance insight for each store, and how they are performing against target.
 
-# INSERT MAP PAGE
+![Stores Map Page](img/StoresMap.png)
 
 #### Map Visual
 
@@ -272,7 +272,7 @@ Above the map is a slicer which allows the map to be filtered by country
 
 #### Stores Drillthrough Page
 
-# INSERT DRILLTHROUGH PAGE
+![Stores Drillthrough Page](img/StoresDrillthrough.png)
 
 This drillthrough page allows a summary for an individual store.
 
@@ -292,7 +292,7 @@ The Previous YTD is calculated with
 
 #### Tooltip Page
 
-# INSERT TOOLTIP PAGE
+![Stores Tooltip](img/StoresTooltip.png)
 
 This page allows a quick look at how each individual store is performing, a new page is created that shows when a store is hovered over on the map. It brings up the profit YTD against target gauge form the previous section
 
@@ -302,7 +302,7 @@ The final step is to polish up the pages and provide some usability. Cross-Filte
 
 THe Navigation bar is finished which allows the user to navigate through each page
 
-# INSERT NAVIGATION
+![Navigation Toolbar](img/Navigation.png)
 
 ## SQL QUERIES
 
