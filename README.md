@@ -145,10 +145,70 @@ Revenue
 
 Orders
 
-WIP
+        Top Customer Orders = MAXX(TOPN(1, Customers, [Total Revenue], DESC), 'Measures Table'[Total Orders])
 
 #### Date Slicer
 
 The line in the bottom right allows the user to filter between years
+
+### Create Executive Summary Page
+
+This page is a report for the high level executive summary, its purpose is to give an overview of the company's performance as a whole and to quickly give insights and check outcomes against key targets.
+
+![Executive Summary Page](img/ExecutiveSummary.png)
+
+#### Card Visuals
+
+Firstly is to create some card visuals, these are all from previously created measures of Total Revenue, Total Profit and Total Orders.
+
+#### Revenue Trending Line Chart
+
+Below the cards is a line chart plotting revenue against time, this chart can be drilled down and also provides a future prediction
+
+#### Donut Charts for Revenue by Country and Store Type
+
+To the right of the card visuals are 2 donut charts that break down revenue against country and store type, these can be cross filtered, updated the page for each type
+
+#### Bar Chart of Orders by Product Category
+
+Below the donut charts is a bar chart that shows the total orders against the product category, this also can be cross filtered
+
+#### KPI Visuals
+
+Below the Trending Line Chart shows the KPIs, these allow a quick look at current performance against the target. For this the previous quarter revenue, profit and orders was found with:
+
+        Previous Quarter Profit = CALCULATE(
+        'Measures Table'[Total Profit],
+        PREVIOUSQUARTER('Date Table'[Date]))
+
+A target value for the current quarter is 5% growth, the output values will show red if below and green if above
+
+#### Top Products Table
+
+The final part is the top products table which will be looked at later, however it is useful on this page when cross filters are applied
+
+### Product Detail Page
+
+This page provides a detailed look at which products are performing well with filtering across product and region
+
+# INSERT PRODUCT PAGE IMAGE
+
+#### Gauge Visuals
+
+These gauges show the current quarter value for revenue, profit and orders against the target quarter value for revenue, profit and orders, which is a 10% increase
+
+Current Quarter Value was determined by
+
+        Current Quarter Revenue = TOTALQTD('Measures Table'[Total Revenue], Orders[Order Date]) 
+
+Previous Quarter Value was determined by
+
+        Previous Quarter Revenue Prod = CALCULATE(
+        TOTALQTD('Measures Table'[Total Revenue], Orders[Order Date]),
+        DATEADD(Orders[Order Date], -1, Quarter))
+
+
+
+
 
 
