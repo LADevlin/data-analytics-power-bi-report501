@@ -1,8 +1,17 @@
 # Data Analysis Power BI Report 501
 
 ## Table of Contents
-    - 
-
+- Introduction
+- What I've Learnt
+- Process
+    - Import Data to Power BI
+    - Create Data Model
+    - Build Customer Detail Page
+    - Create Executive Summary Page
+    - Create Product Detail Page
+    - Create Stores Map Page
+    - Cross-Filtering and Navigation
+- SQL Queries
 
 ## Introduction
 
@@ -14,7 +23,7 @@ _Recognizing the value of this data, they aim to transform it into actionable in
 
 _The report will present a high-level business summary tailored for C-suite executives, and also give insights into their highest value customers segmented by sales region, provide a detailed analysis of top-performing products categorised by type against their sales targets, and a visually appealing map visual that spotlights the performance metrics of their retail outlets across different territories._"
 
-## What I've Learned
+## What I've Learnt
 
 Within this project I have learned how to utilise a wide variety of different data visuals that each can be used to analyse complex data into a user friendly format. These visuals all have different uses where best to use. I have also learnt about the importance of cross-filtering and how several different data visuals can be combined to create even more powerful summaries of data. Along with this I have expanded my working knowledge of Power BI to create complex note books which can be interacted with, drilling through data, use of bookmarks and page for navigation.
 
@@ -197,7 +206,7 @@ A target value for the current quarter is 5% growth, the output values will show
 
 The final part is the top products table which will be looked at later, however it is useful on this page when cross filters are applied
 
-### Product Detail Page
+### Create Product Detail Page
 
 This page provides a detailed look at which products are performing well with filtering across product and region
 
@@ -247,7 +256,7 @@ On this page, it is useful to provide a slicer toolbar for clarity and not clutt
 
 Using a button that links to a bookmark, a menu is opened that allows slicing on the page for product category and country, this menu can be closed again with the back button linking to a bookmark of the original page, whilst also keeping the changes of data.
 
-### Stores Map Page
+### Create Stores Map Page
 
 This page provides a map of all stores whilst providing a quick performance insight for each store, and how they are performing against target.
 
