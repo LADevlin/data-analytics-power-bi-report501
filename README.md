@@ -1,5 +1,9 @@
 # Data Analysis Power BI Report 501
 
+## Table of Contents
+    - 
+
+
 ## Introduction
 
 This is a practice project to test, show and improve my Power BI knowledge. This project is to satisfy the below brief:
@@ -9,6 +13,12 @@ This is a practice project to test, show and improve my Power BI knowledge. This
 _Recognizing the value of this data, they aim to transform it into actionable insights for better decision-making. Your goal is to use Microsoft Power BI to design a comprehensive Quarterly report. This will involve extracting and transforming data from various origins, designing a robust data model rooted in a star-based schema, and then constructing a multi-page report._
 
 _The report will present a high-level business summary tailored for C-suite executives, and also give insights into their highest value customers segmented by sales region, provide a detailed analysis of top-performing products categorised by type against their sales targets, and a visually appealing map visual that spotlights the performance metrics of their retail outlets across different territories._"
+
+## What I've Learned
+
+Within this project I have learned how to utilise a wide variety of different data visuals that each can be used to analyse complex data into a user friendly format. These visuals all have different uses where best to use. I have also learnt about the importance of cross-filtering and how several different data visuals can be combined to create even more powerful summaries of data. Along with this I have expanded my working knowledge of Power BI to create complex note books which can be interacted with, drilling through data, use of bookmarks and page for navigation.
+
+I've also reinforced my learning of SQL and how the use of both methods can be incredibly pwoer tools for data analysis.
 
 ## Process
 
@@ -206,6 +216,108 @@ Previous Quarter Value was determined by
         Previous Quarter Revenue Prod = CALCULATE(
         TOTALQTD('Measures Table'[Total Revenue], Orders[Order Date]),
         DATEADD(Orders[Order Date], -1, Quarter))
+
+Target Quarter Value simply by multiplying the previous quarter by 1.1
+
+The Value will show red if below target and white if above target
+
+#### Area Chart of Revenue by Product Category
+
+The area chart shows the total revenue for each product category against time. This chart can be used to cross filter the other elements on the page
+
+#### Top Products Table
+
+Below the area chart is the top 10 products for total revenue, which also shows the total customers, total orders and profit per customer, all these are taken from previous measures. This is useful when cross filtering to see top products for each category
+
+#### Scatter Graph
+
+The scatter graph shows quantity sold against profit per item, highlighted by category. This is a very useful graph to quickly identify the top performing products, which could be further marketed as well as the best performing categories.
+
+Hovering over a dot brings up information and quickly identifies the exact product.
+
+Profit per Item was calculated via
+
+        Profit per Item = Products[Sale Price] - Products[Cost Price]
+
+#### Slicer Toolbar
+
+On this page, it is useful to provide a slicer toolbar for clarity and not cluttering the page.
+
+# INSERT SLICER TOOLBAR
+
+Using a button that links to a bookmark, a menu is opened that allows slicing on the page for product category and country, this menu can be closed again with the back button linking to a bookmark of the original page, whilst also keeping the changes of data.
+
+### Stores Map Page
+
+This page provides a map of all stores whilst providing a quick performance insight for each store, and how they are performing against target.
+
+# INSERT MAP PAGE
+
+#### Map Visual
+
+The main part of this page is the store map which shows the store location, where the geography hierarchy is linked to location and Profit YTD is linked to the bubble size.
+
+#### Country Slicer
+
+Above the map is a slicer which allows the map to be filtered by country
+
+#### Stores Drillthrough Page
+
+# INSERT DRILLTHROUGH PAGE
+
+This drillthrough page allows a summary for an individual store.
+
+It contains:
+- A Top 5 products, showing Profit YTD, Total Orders, Total Revenue
+- A Column chart showing total orders by products
+- Gauge for Profit YTD and Revenue YTD against target
+- Card Visual for current store
+
+The Gauge visual compares against the current YTD against the previous YTD at the point in the year where the target is a 20% increase.
+
+The Previous YTD is calculated with 
+
+        Profit Goal = CALCULATE(
+        TOTALYTD([Total Profit], 'Date Table'[Start of Year]),
+        DATEADD('Date Table'[Date], -1, YEAR))
+
+#### Tooltip Page
+
+# INSERT TOOLTIP PAGE
+
+This page allows a quick look at how each individual store is performing, a new page is created that shows when a store is hovered over on the map. It brings up the profit YTD against target gauge form the previous section
+
+### Cross-Filtering and Navigation
+
+The final step is to polish up the pages and provide some usability. Cross-Filtering is applied by default so it is turned off for some elements where it may lead to confusing conclusions. 
+
+THe Navigation bar is finished which allows the user to navigate through each page
+
+# INSERT NAVIGATION
+
+## SQL QUERIES
+
+It may be the case that the client doesn't have access to a visualisation tool like Power BI, so it is also important to understand how to run databse queries that can be returned in friendly formats, I have completed 5 specialised searches which I have included the SQL query and resulting CSV file that is returned.
+
+### Question 1
+
+How many staff are there in all of the UK stores?
+
+### Question 2
+
+Which month in 2022 has had the highest revenue?
+
+### Question 3
+
+Which German store type had the highest revenue for 2022?
+
+### Question 4
+
+Create a view where the rows are the store types and the columns are the total sales, percentage of total sales and the count of orders
+
+### Question 5
+
+Which product category generated the most profit for the "Wiltshire, UK" region in 2021?
 
 
 
